@@ -30,7 +30,7 @@
 	function numItemsInString(myString) {
 		var stringArray = myString.split(',');
 		var filteredArray = stringArray.filter(function(item) {
-			return item != "";
+			return item.trim() != "";
 		});
 		return filteredArray.length;
 	}
