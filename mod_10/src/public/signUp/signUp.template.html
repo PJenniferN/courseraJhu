@@ -1,0 +1,37 @@
+<form name='signupForm' class='signupForm' novalidate>
+	First Name:
+	<input type="text" name="fname" placeholder="Enter your first name"
+		ng-model="signup.user.fname" required>
+	<span ng-if="signupForm.fname.$error.required && signupForm.fname.$touched"> 
+		First name cannot be blank </span>
+	<br>
+	Last Name:
+	<input type="text" name="lname" placeholder="Enter your last name" 
+		ng-model="signup.user.lname" required>
+	<span ng-if="signupForm.lname.$error.required && signupForm.lname.$touched"> 
+		Last name cannot be blank </span>
+	<br>
+	Email:
+	<input type="email" name="email" placeholder="Email"
+		ng-model="signup.user.email" required>
+	<span ng-if="signupForm.email.$invalid && signupForm.email.$touched"> 
+		Must be a valid email address: handle@domain format </span>
+	<br>
+	Phone Number:
+	<input type="text" name="phone" placeholder="Phone ###-###-####"
+	ng-model="reg.user.phone" required
+	pattern="(\d{3})-(\d{3})-(\d{4})">
+	<span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched"> 
+		Phone must be in the format ###-###-####. </span>
+	<br>
+	Favorite Dish:
+	<input type="text" name="sname" placeholder="Enter your favorite dish short name"
+		ng-model="signup.user.sname"required>
+	<br>
+
+	<button
+		ng-disabled="signupForm.$invalid"
+		ng-click="signupForm.submit()">
+		Submit
+	</button>
+</form>
